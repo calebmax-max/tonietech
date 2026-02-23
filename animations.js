@@ -64,6 +64,8 @@
     const scrollable = doc.scrollHeight - doc.clientHeight;
     const progress = scrollable > 0 ? (doc.scrollTop / scrollable) * 100 : 0;
     document.body.style.setProperty("--scroll-progress", `${progress.toFixed(2)}%`);
+    const heroParallax = Math.min(doc.scrollTop * 0.08, 22);
+    document.body.style.setProperty("--hero-parallax", `${heroParallax.toFixed(2)}px`);
   };
 
   updateProgress();
@@ -112,10 +114,14 @@
       const x = (event.clientX - rect.left) / rect.width - 0.5;
       const y = (event.clientY - rect.top) / rect.height - 0.5;
       heroShell.style.transform = `rotateX(${(-y * 1.5).toFixed(2)}deg) rotateY(${(x * 2).toFixed(2)}deg)`;
+      heroShell.style.setProperty("--spot-x", `${((x + 0.5) * 100).toFixed(2)}%`);
+      heroShell.style.setProperty("--spot-y", `${((y + 0.5) * 100).toFixed(2)}%`);
     });
 
     heroShell.addEventListener("mouseleave", () => {
       heroShell.style.transform = "";
+      heroShell.style.setProperty("--spot-x", "50%");
+      heroShell.style.setProperty("--spot-y", "18%");
     });
   }
 })();
