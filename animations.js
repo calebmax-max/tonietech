@@ -1,5 +1,6 @@
 (() => {
   initMobileNav();
+  initContactWhatsApp();
 
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (prefersReducedMotion) {
@@ -188,5 +189,35 @@
     }
 
     syncMenu();
+  }
+
+  function initContactWhatsApp() {
+    const form = document.querySelector(".contact-form");
+    if (!form) {
+      return;
+    }
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const name = (form.querySelector("#name")?.value || "").trim();
+      const phone = (form.querySelector("#phone")?.value || "").trim();
+      const subject = (form.querySelector("#subject")?.value || "").trim();
+      const message = (form.querySelector("#message")?.value || "").trim();
+
+      const lines = [
+        "Hello TONIE_TECH,",
+        "",
+        `Name: ${name}`,
+        `Phone: ${phone}`,
+        `Subject: ${subject}`,
+        "Message:",
+        message
+      ];
+
+      const whatsappMessage = encodeURIComponent(lines.join("\n"));
+      const whatsappUrl = `https://wa.me/254762220299?text=${whatsappMessage}`;
+      window.open(whatsappUrl, "_blank", "noopener");
+    });
   }
 })();
