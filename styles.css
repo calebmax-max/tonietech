@@ -2846,3 +2846,175 @@ h1 span {
     height: 128px;
   }
 }
+
+/* Keep layout fixed: disable sway/float/parallax motion on page sections and cards */
+.site-nav-wrap,
+.site-nav,
+.site-brand::after,
+.site-brand::before,
+.site-brand-logo,
+.site-links a,
+.site-links a::after,
+.site-links .site-link-cta,
+.site-links .site-link-cta::after,
+.hero-shell,
+.hero-cards,
+.hero-cards .card,
+.card,
+.company-tag-marquee,
+.company-tag-marquee::before,
+.company-tag-marquee::after,
+.company-tag-marquee .marquee-aura,
+.company-tag-marquee .marquee-spark,
+.company-tag-marquee .marquee-track,
+.trust-card,
+.mv-card,
+.process-step,
+.hours,
+.about-shell,
+.contact-shell,
+.story-shell,
+.trust-shell,
+.services-cta-shell,
+.contact-form-shell,
+.founder-shell,
+.founder-note,
+.founder-options,
+.footer-shell,
+.whatsapp-btn,
+.cta-btn::after,
+.whatsapp-btn::after {
+  animation: none !important;
+}
+
+.hero-shell,
+.hero-cards,
+.hero-cards .card,
+.card,
+.trust-card,
+.mv-card,
+.process-step,
+.hours,
+.about-shell,
+.contact-shell,
+.story-shell,
+.trust-shell,
+.services-cta-shell,
+.contact-form-shell,
+.founder-shell,
+.founder-note,
+.founder-options,
+.footer-shell,
+.site-links a,
+.cta-btn,
+.ghost-btn,
+.whatsapp-btn {
+  transform: none !important;
+}
+
+.site-links a:hover,
+.site-links .site-link-cta:hover,
+.cta-btn:hover,
+.ghost-btn:hover,
+.whatsapp-btn:hover,
+.card:hover,
+.trust-card:hover,
+.mv-card:hover,
+.process-step:hover,
+.hours:hover,
+.footer-shell:hover,
+.founder-note:hover,
+.founder-options:hover {
+  transform: none !important;
+}
+
+/* Index article cards: no reveal/fade transitions */
+.motion-ready .tonie-hero article,
+.motion-ready .trust-section article,
+.motion-ready .tonie-hero article.reveal-target,
+.motion-ready .trust-section article.reveal-target,
+.motion-ready .tonie-hero article.is-visible,
+.motion-ready .trust-section article.is-visible {
+  animation: none !important;
+  transition: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Index hero section: tighter small-device responsiveness */
+.hero-copy h1 {
+  font-size: clamp(1.35rem, 5.2vw, 3.2rem);
+  line-height: 1.12;
+  text-wrap: balance;
+}
+
+.hero-copy .subtext {
+  max-width: 56ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-cards {
+  width: 100%;
+}
+
+@media (max-width: 760px) {
+  .hero-copy .cta-btn {
+    width: min(100%, 16rem);
+    text-align: center;
+  }
+}
+
+@media (max-width: 580px) {
+  .hero-copy h1 {
+    font-size: clamp(1.2rem, 7.2vw, 1.9rem);
+    line-height: 1.14;
+  }
+
+  .hero-copy h1 br {
+    display: none;
+  }
+
+  .hero-copy .subtext {
+    max-width: 34ch;
+    font-size: clamp(0.8rem, 3.4vw, 0.92rem);
+  }
+
+  .hero-cards {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero-copy .cta-btn {
+    width: 100%;
+  }
+
+  .hero-cards .card {
+    height: clamp(118px, 42vw, 150px);
+  }
+}
+
+/* Slightly smaller hero images */
+.tonie-hero .hero-cards .card {
+  height: 180px;
+}
+
+@media (max-width: 900px) {
+  .tonie-hero .hero-cards .card {
+    height: 165px;
+  }
+}
+
+@media (max-width: 580px) {
+  .tonie-hero .hero-cards .card {
+    height: 140px;
+  }
+}
+
+@media (max-width: 420px) {
+  .tonie-hero .hero-cards .card {
+    height: 118px;
+  }
+}
