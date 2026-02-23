@@ -948,7 +948,7 @@ body::after {
     radial-gradient(140% 120% at 80% 5%, rgba(142, 129, 255, 0.22), transparent 40%),
     linear-gradient(145deg, var(--hero-grad-a), var(--hero-grad-b) 42%, var(--hero-grad-c));
   border-radius: 26px;
-  padding: 1.7rem 2rem 2rem;
+  padding: clamp(1rem, 2.6vw, 1.7rem) clamp(0.85rem, 2.8vw, 2rem) clamp(1.1rem, 3vw, 2rem);
   box-shadow:
     0 24px 44px rgba(1, 1, 8, 0.6),
     0 0 0 1px rgba(230, 230, 255, 0.06) inset;
@@ -1045,7 +1045,7 @@ body::after {
 
 .hero-copy {
   max-width: 660px;
-  margin: 3rem auto 2.3rem;
+  margin: clamp(1.1rem, 4.8vw, 3rem) auto clamp(1rem, 3.2vw, 2.3rem);
   text-align: center;
 }
 
@@ -2676,6 +2676,27 @@ h1 span {
   background: linear-gradient(180deg, #69f79f, #3ed875);
 }
 
+@media (max-width: 760px) {
+  .tonie-hero,
+  .trust-section,
+  .site-footer {
+    width: 100%;
+  }
+
+  .company-tag-marquee {
+    width: 100%;
+  }
+
+  .hero-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.6rem;
+  }
+
+  .card {
+    height: clamp(140px, 32vw, 190px);
+  }
+}
+
 @media (max-width: 900px) {
   .footer-shell {
     grid-template-columns: 1fr;
@@ -2794,6 +2815,11 @@ h1 span {
   .footer-logo {
     width: 104px;
     max-height: 50px;
+  }
+
+  .company-tag-marquee .marquee-track {
+    font-size: 0.56rem;
+    letter-spacing: 0.08em;
   }
 }
 
