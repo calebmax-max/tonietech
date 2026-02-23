@@ -2675,3 +2675,148 @@ h1 span {
   color: #03140d;
   background: linear-gradient(180deg, #69f79f, #3ed875);
 }
+
+@media (max-width: 900px) {
+  .footer-shell {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 360px) {
+  body {
+    padding: 9.8rem 0.5rem 1rem;
+  }
+
+  .site-nav-wrap {
+    top: 0.25rem;
+    width: calc(100% - 0.5rem);
+  }
+
+  .site-nav {
+    padding: 0.42rem;
+    gap: 0.4rem;
+  }
+
+  .hero-shell,
+  .about-shell,
+  .contact-shell,
+  .contact-form-shell,
+  .story-shell,
+  .trust-shell,
+  .services-cta-shell,
+  .footer-shell {
+    border-radius: 16px;
+    padding: 0.95rem 0.78rem;
+  }
+
+  .hero-copy {
+    margin: 1rem auto 0.9rem;
+  }
+
+  h1 {
+    font-size: clamp(1.15rem, 7.2vw, 1.5rem);
+    line-height: 1.15;
+  }
+
+  h2 {
+    font-size: clamp(1.05rem, 5.8vw, 1.35rem);
+  }
+
+  .subtext,
+  .trust-card p,
+  .service-desc,
+  .why-desc,
+  .process-step p,
+  .mv-card p,
+  .story-content p,
+  .about-content p,
+  .founder-content p,
+  .footer-col p {
+    font-size: 0.78rem;
+    line-height: 1.5;
+  }
+
+  .card {
+    height: 145px;
+  }
+
+  .founder-media {
+    min-height: 190px;
+  }
+
+  .contact-form input,
+  .contact-form textarea,
+  .contact-form button {
+    font-size: 16px;
+  }
+
+  .process-grid,
+  .trust-grid,
+  .why-grid,
+  .mv-shell,
+  .hours-container,
+  .services-cta-actions,
+  .footer-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .services-cta-actions {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .cta-btn,
+  .ghost-btn,
+  .whatsapp-btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .values-list,
+  .founder-note ul,
+  .founder-options ul {
+    padding-left: 0.9rem;
+  }
+
+  .contact-line,
+  .contact-line span,
+  .response-time,
+  .footer-col p,
+  .footer-col a {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .footer-brand {
+    max-width: 100%;
+  }
+
+  .footer-logo {
+    width: 104px;
+    max-height: 50px;
+  }
+}
+
+@media (max-width: 280px) {
+  body {
+    padding-top: 10.2rem;
+  }
+
+  .site-brand-logo {
+    width: 98px;
+    max-height: 28px;
+  }
+
+  .site-links a {
+    font-size: 0.62rem;
+    padding: 0.3rem 0.2rem;
+  }
+
+  h1 {
+    font-size: 1.05rem;
+  }
+
+  .card {
+    height: 128px;
+  }
+}
