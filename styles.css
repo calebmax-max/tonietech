@@ -2998,6 +2998,7 @@ h1 span {
 
 /* Homepage cards aligned with site-wide section sizing */
 .tonie-hero .hero-cards {
+  width: 500px;
   max-width: 100%;
   margin-left: 0;
   margin-right: 0;
@@ -3023,4 +3024,38 @@ h1 span {
   .tonie-hero .hero-cards .card {
     height: 128px;
   }
+}
+
+/* Homepage compact sizing (div containers only on index) */
+.home-page div {
+  max-width: 100%;
+}
+
+.home-page .site-nav-wrap,
+.home-page .tonie-hero,
+.home-page .trust-section,
+.home-page .site-footer {
+  width: min(860px, 100%);
+}
+
+.home-page .hero-shell,
+.home-page .trust-shell,
+.home-page .footer-shell {
+  padding: 1rem 0.85rem;
+}
+
+.home-page .hero-copy {
+  max-width: 480px;
+  margin-top: 1.1rem;
+  margin-bottom: 0.8rem;
+}
+
+.home-page .hero-cards {
+  width: min(420px, 86%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.home-page .trust-grid {
+  gap: 0.55rem;
 }
