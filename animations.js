@@ -1,4 +1,6 @@
 (() => {
+  initMobileNav();
+
   const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (prefersReducedMotion) {
     return;
@@ -123,5 +125,68 @@
       heroShell.style.setProperty("--spot-x", "50%");
       heroShell.style.setProperty("--spot-y", "18%");
     });
+  }
+
+  function initMobileNav() {
+    const nav = document.querySelector(".site-nav");
+    const toggle = document.querySelector(".site-nav-toggle");
+    const links = document.querySelector(".site-links");
+    if (!nav || !toggle || !links) {
+      return;
+    }
+
+    document.documentElement.classList.add("nav-js");
+    const mobileQuery = window.matchMedia("(max-width: 760px)");
+
+    const closeMenu = () => {
+      nav.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+    };
+
+    const openMenu = () => {
+      nav.classList.add("is-open");
+      toggle.setAttribute("aria-expanded", "true");
+    };
+
+    const syncMenu = () => {
+      if (!mobileQuery.matches) {
+        nav.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+        return;
+      }
+
+      const isOpen = nav.classList.contains("is-open");
+      toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    };
+
+    toggle.addEventListener("click", () => {
+      if (nav.classList.contains("is-open")) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    links.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        if (mobileQuery.matches) {
+          closeMenu();
+        }
+      });
+    });
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && nav.classList.contains("is-open")) {
+        closeMenu();
+      }
+    });
+
+    if (typeof mobileQuery.addEventListener === "function") {
+      mobileQuery.addEventListener("change", syncMenu);
+    } else {
+      mobileQuery.addListener(syncMenu);
+    }
+
+    syncMenu();
   }
 })();
