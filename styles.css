@@ -3955,7 +3955,7 @@ h1 span {
 .home-layout-v4 .hero-copy h1 {
   font-size: clamp(1.4rem, 3vw, 2.35rem);
   line-height: 1.08;
-  margin-left: -100px;
+  margin-left: -5px;
 }
 
 .home-layout-v4 .hero-copy .subtext {
