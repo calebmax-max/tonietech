@@ -2996,25 +2996,31 @@ h1 span {
   }
 }
 
-/* Slightly smaller hero images */
+/* Homepage cards aligned with site-wide section sizing */
+.tonie-hero .hero-cards {
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .tonie-hero .hero-cards .card {
-  height: 180px;
+  height: 190px;
 }
 
 @media (max-width: 900px) {
   .tonie-hero .hero-cards .card {
-    height: 165px;
+    height: 170px;
   }
 }
 
 @media (max-width: 580px) {
   .tonie-hero .hero-cards .card {
-    height: 140px;
+    height: 145px;
   }
 }
 
 @media (max-width: 420px) {
   .tonie-hero .hero-cards .card {
-    height: 118px;
+    height: 128px;
   }
 }
