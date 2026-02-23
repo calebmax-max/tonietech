@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --bg-main: #0d0f1c;
   --hero-grad-a: #281f57;
   --hero-grad-b: #1f1f51;
@@ -3955,6 +3955,7 @@ h1 span {
 .home-layout-v4 .hero-copy h1 {
   font-size: clamp(1.4rem, 3vw, 2.35rem);
   line-height: 1.08;
+  margin-left: -100px;
 }
 
 .home-layout-v4 .hero-copy .subtext {
@@ -4057,8 +4058,10 @@ h1 span {
   }
 
   .home-layout-v4 .hero-copy h1 {
+    border-right: 70px;
     font-size: clamp(1.15rem, 7vw, 1.6rem);
   }
+
 
   .home-layout-v4 .hero-copy h1 br {
     display: none;
@@ -4101,3 +4104,7 @@ h1 span {
     font-size: 1.7rem;
   }
 }
+
+
+
+
