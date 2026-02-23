@@ -3026,11 +3026,7 @@ h1 span {
   }
 }
 
-/* Homepage compact sizing (div containers only on index) */
-.home-page div {
-  max-width: 80%;
-}
-
+/* Homepage compact sizing (index only) */
 .home-page .site-nav-wrap,
 .home-page .tonie-hero,
 .home-page .trust-section,
@@ -3058,4 +3054,75 @@ h1 span {
 
 .home-page .trust-grid {
   gap: 0.55rem;
+}
+
+/* Home page hard mobile responsiveness */
+@media (max-width: 600px) {
+  .home-page {
+    overflow-x: hidden;
+    padding-left: 0.55rem;
+    padding-right: 0.55rem;
+  }
+
+  .home-page .site-nav-wrap {
+    width: calc(100% - 0.7rem);
+  }
+
+  .home-page .site-nav-wrap,
+  .home-page .tonie-hero,
+  .home-page .trust-section,
+  .home-page .site-footer {
+    width: 100%;
+  }
+
+  .home-page .hero-shell,
+  .home-page .trust-shell,
+  .home-page .footer-shell {
+    width: 100%;
+    padding: 0.9rem 0.75rem;
+  }
+
+  .home-page .site-nav {
+    width: 100%;
+  }
+
+  .home-page .hero-copy,
+  .home-page .company-tag-marquee,
+  .home-page .subtext,
+  .home-page .hero-cards {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .home-page .hero-cards {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+
+  .home-page .hero-cards .card {
+    width: 100%;
+    height: auto;
+    min-height: 112px;
+    aspect-ratio: 16 / 9;
+  }
+
+  .home-page .trust-grid,
+  .home-page .footer-shell {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 420px) {
+  .home-page h1 {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  .home-page .site-links {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page .site-links a {
+    width: 100%;
+  }
 }
